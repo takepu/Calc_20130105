@@ -1,10 +1,9 @@
 /*
- * AplCalc.cpp
+ * Calculator.cpp
  *
- *  Created on: 2013/01/04
+ *  Created on: 2013/01/02
  *      Author: takepu
  */
-
 #include <complex>
 #include "AplCalc.h"
 
@@ -43,3 +42,21 @@ long AplCalc::Sub( long data1, long data2 )
 	return ( data1 - data2 );
 }
 
+long AplCalc::Multi( long data1, long data2 )
+{
+	if( (data1 != 0) &&
+	    ( (APLCALC_MAX / abs(data1)) < abs(data2) ) )
+	{
+		return APLCALC_OVERFLOW;
+	}
+	return ( data1 * data2 );
+}
+
+long AplCalc::Div( long data1, long data2 )
+{
+	if( data2 == 0 )
+	{
+		return 0;
+	}
+	return ( data1 / data2 );
+}

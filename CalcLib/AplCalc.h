@@ -1,7 +1,7 @@
 /*
- * AplCalc.h
+ * Calculator.h
  *
- *  Created on: 2013/01/04
+ *  Created on: 2013/01/02
  *      Author: takepu
  */
 
@@ -15,11 +15,13 @@ class AplCalc {
 public:
 	AplCalc();
 	virtual ~AplCalc();
-	long Add(long data1,long data2);
-	long Sub(long data1,long data2);
+	long Add( long data1, long data2 );
+	long Sub( long data1, long data2 );
+	long Multi( long data1, long data2 );
+	long Div( long data1, long data2 );
+
 private:
 	inline bool IsPlus( long num ) { return (num >= 0); }
 	inline bool IsMinus( long num ){ return (num <  0); }
 };
-
 #endif /* APLCALC_H_ */
